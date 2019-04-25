@@ -25,7 +25,7 @@ We have enforced the following major constraints in the survey design:
 
 5. A few sample answers are designed to align the criteria and minimize personal bias. They are shown to a user before the start of the actual questions in each topic.
 
-6. A user's answer (Yes / No / Not Sure) along with the response time are recorded.
+6. A user's answer (yes /no /not sure) along with the response time are recorded.
 
 ## Copyright Notice
 
