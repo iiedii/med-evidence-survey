@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+.header,
+.footer {
+    background-color: dimgray;
+    color: white;
+    padding: 12px;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+}
+.footer p {
+	font-size: 12px;
+}
+.metanav {
+    text-align: right;
+    padding: 0.5em;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+.contentnav {
+    text-align: right;
+    padding: 0.5em;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+}
+.metanav a:link,
+.metanav a:visited,
+.contentnav a:link,
+.contentnav a:visited {
+    background-color: lightgray;
+    color: black;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+.metanav a:hover,
+.contentnav a:hover {
+    background-color: powderblue;
+}
+.column {
+    float: left;
+    padding: 15px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.sidebar {
+    width: 15%;
+	border-right: 1px solid gray;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+.content {
+    width: 85%;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+.form {
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+.flash {
+	background: #cee5f5;
+	padding: 0.5em;
+}
+.error {
+    background: #f0d6d6;
+    padding: 0.5em;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+
+h1 {
+	font-family: "Open Sans";
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h3 {
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 15.4px;
+}
+p {
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+blockquote {
+	font-family: "Open Sans";
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre {
+	font-family: "Open Sans";
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+
+table {
+	border: none;
+	border-collapse: collapse;
+}
+th {
+	border: 1px solid lightslategray;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 30px;
+}
+td {
+	border: none;
+	padding: 5px;
+}

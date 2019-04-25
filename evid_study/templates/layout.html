@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MED User Study</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    {% if session.logged_in or 'login' in request.url_rule.rule %}
+    {% block header %}{% endblock %}
+    {% endif %}
+    <div class="metanav">
+        {% if not session.logged_in %}
+            <a href="{{ url_for('login') }}">Log in</a>
+        {% else %}
+            <a href="{{ url_for('logout') }}">Log out</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="clearfix">
+    <div class="column sidebar">
+        {% if session.logged_in or 'login' in request.url_rule.rule %}
+        {% block menu %}{% endblock %}
+        {% endif %}
+    </div>
+
+    <div class="column content">
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% if session.logged_in or 'login' in request.url_rule.rule or 'inspect' in request.url_rule.rule %}
+        {% block content %}{% endblock %}
+        {% else %}
+            <h2>Your session is expired. You need to login.</h2>
+        {% endif %}
+    </div>
+</div>
+
+<div class="footer">
+    {% block footer %}
+    <p>MED Event User Study &copy; Copyright 2017 James Lu.</p>
+    {% endblock %}
+</div>
+
+</body>
+</html>

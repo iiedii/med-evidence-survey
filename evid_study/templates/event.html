@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block header %}
+    <h1 align="center">{{ header }}</h1>
+{% endblock %}
+
+{% block menu %}
+    <h3>Progress</h3>
+    <ul>
+    {% for eventID in eventInfo.eventIDList %}
+        {% if eventID != eventInfo.highlightedEventID %}
+            <li></li>
+        {% else %}
+            <li><b style="font-size:18px"><font color="brown">&lArr;</font></b> {{ loop.index }}/{{ loop.length }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content %}
+    {{ eventInfo.eventDescription|safe }}
+    <p align="right"><span class="contentnav"><a href="{{ nextPageUrl }}" id="nextpage">Next</a></span></p>
+
+    <script>
+        var linkToNextPage = document.getElementById("nextpage");
+        var countdown = 15;
+        var placeholder = document.createElement("span");
+        linkToNextPage.parentNode.replaceChild(placeholder, linkToNextPage);
+
+        var timer;
+        function showLinkToNextPage() {
+            countdown--;
+            if (countdown < 0) {
+                placeholder.parentNode.replaceChild(linkToNextPage, placeholder);
+                clearInterval(timer);
+            }
+        }
+        timer = setInterval(showLinkToNextPage, 1000);
+    </script>
+{% endblock %}

@@ -1,0 +1,2 @@
+graft www/templates
+graft www/static

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block header %}
+    <h1 align="center">Is this video relevant to the event <em><u>{{ eventInfo.eventTitle }}</u></em> ?</h1>
+{% endblock %}
+
+{% block menu %}
+    <h3>Progress</h3>
+    <ul>
+    {% for eventID in eventInfo.eventIDList %}
+        {% if eventID != eventInfo.highlightedEventID %}
+            <li></li>
+        {% else %}
+            <li><b style="font-size:18px"><font color="brown">&lArr;</font></b> {{ loop.index }}/{{ loop.length }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <p style="color:darkblue;"><mark><b>Please mouseover the following evidence to play the snippets!</b></mark></p>
+    <table>
+        {% for rowIndex in range(videoTable.maxHeight) %}
+            <tr>
+                <th>{{ rowIndex + 1 }}</th>
+                {% for colIndex in range(videoTable.maxWidth) %}
+                    {% if videoTable.videoMat[rowIndex][colIndex] %}
+                        <td>
+                            <video width="210px" loop onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+                                <source src="{{ videoTable.videoMat[rowIndex][colIndex] }}" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <form action="{{ url_for('postAnswer') }}" method="POST">
+        <fieldset class="form">
+            <legend><h3>Your answer</h3></legend><br>
+            <input type="radio" name="answer" value="yes">Yes<br>
+            <input type="radio" name="answer" value="no">No<br>
+            <input type="radio" name="answer" value="not_sure">Not sure<br>
+            <input type="hidden" id="ldtime_submit" name="loadingtime" value="loading_not_finished"><br>
+            <input type="submit" value="Submit"><br>
+        </fieldset>
+    </form>
+    <br><br>
+    <p id="ldtime" align="right"></p>
+
+    <script>
+        window.onload = function() {
+            var loadingTime = window.performance.timing.domComplete - window.performance.timing.navigationStart;
+            document.getElementById("ldtime").innerHTML = "Page loading time: " + loadingTime + " ms";
+            document.getElementById("ldtime_submit").value = loadingTime;
+        }
+
+        function playVideo(video) {
+            var isPlaying = video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2;
+            if (!isPlaying)
+                video.play();
+        }
+
+        function pauseVideo(video) {
+            var isPlaying = video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2;
+            if (isPlaying)
+                video.pause();
+        }
+    </script>
+{% endblock %}
