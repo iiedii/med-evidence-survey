@@ -5,7 +5,7 @@
 
 To study how human evaluates the quality of machine-generated evidence in *[Multimedia Event Detection](https://www.nist.gov/itl/iad/mig/med-2016-evaluation)*, I built this website for an effective survey.
 
-[Flask](http://flask.pocoo.org/) web framework is chosen for the back end. The reasons are simple: It is Python-based, super light-weight, and flexible. The content of the pages is generated dynamically.
+[Flask web framework](http://flask.pocoo.org/) is chosen for the back end. The reasons are simple: It is Python-based, super light-weight, and flexible. The content of the pages is generated dynamically in nature.
 
 ------------------------------------------
 
