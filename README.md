@@ -2,6 +2,7 @@
 
 [![Python version](https://img.shields.io/badge/python-2.7-blue.svg)](https://www.python.org/download/releases/2.7/)
 [![Flask version](https://img.shields.io/static/v1.svg?label=flask&message=1.0&color=blue&logo=flask)](https://pypi.org/project/Flask/)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 To study how human evaluates the quality of machine-generated evidence in *[Multimedia Event Detection](https://www.nist.gov/itl/iad/mig/med-2016-evaluation)*, I built this website for an effective survey.
 
