@@ -18,13 +18,13 @@ We have enforced the following major constraints in the survey design:
 
 1. There are five types of evidence which are either images or video snippets (3 seconds each). For each video, a user is only presented by one of the types. No other types from the same video can be shown to the same user. This avoids the user memorizing a made decision.
 
-2. All types of evidence for a video are ensured to be evaluated by different users.
+2. All types of evidence of a video are ensured to be evaluated by different users.
 
 3. The order of both topics and videos are random. For a single video, the type of evidence shown to a user is random too.
 
-4. We randomly select a portion of the questions and distribute them to all the users. With this overlapping, we are able to evaluate the validity of a user's answer or any of the personal bias.
+4. We randomly select a portion of the questions and distribute them to all the users. With this overlap, we are able to evaluate the validity of a user's answer or any of the personal bias.
 
-5. A few sample answers are designed to align the criteria and minimize personal bias. They are shown to a user before the start of the actual questions in each topic.
+5. A few sample answers of some marginal cases are designed to align the criteria and minimize personal bias. They are shown to a user before the start of the actual questions in each topic.
 
 6. A user's answer (yes /no /not sure) along with the response time are recorded.
 
