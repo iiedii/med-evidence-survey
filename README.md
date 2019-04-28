@@ -28,7 +28,7 @@ We have enforced the following constraints in the survey design:
 
 6. A user's answer (yes /no /not sure) along with the response time are recorded.
 
-7. A user can leave at any moment and come back to continue the survey. In this case, he needs to read the topic description at the question he left with.
+7. A user can leave at any moment and come back to continue the survey. In this case, he needs to read the topic description again at the question he left with.
 
 8. A user can't go back to the question he already answered or override the answer in any way.
 
